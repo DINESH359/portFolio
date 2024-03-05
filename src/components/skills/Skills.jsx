@@ -4,24 +4,23 @@ import TechGraphs from './skill/TechGraphs';
 
 const Skills = () => {
     return (
-        <div className="grid grid-cols-2 grid-rows-2 h-screen">
-            {/* First quadrant */}
-            <div className="col-span-1 row-span-1 bg-gray-200 p-4">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet dapibus justo.</p>
+        <div className='h-screen pt-20'>
+            <div>
+            <h1 className="text-4xl text-center underline underline-offset-3px font-mono font-extrabold text-pretty text-black">SKILLS</h1>
+
             </div>
-            {/* Second quadrant */}
-            <div className="col-span-1 row-span-1 bg-gray-200 p-4">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet dapibus justo.</p>
-            </div>
-            {/* Third quadrant */}
-            <div className="col-span-1 row-span-1 bg-gray-200 p-4">
+        <div className="grid grid-cols-2 ">     
+           
+            <div className="col-span-1 row-span-1 p-4">
                 <PieChart />
             </div>
             {/* Fourth quadrant */}
-            <div className="col-span-1 row-span-1 bg-gray-200 p-4">
+            <div className="col-span-1 row-span-1 p-4">
                 <TechGraphs />
             </div>
         </div>
+        </div>
+        
     );
 };
 

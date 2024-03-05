@@ -22,7 +22,7 @@ const TechGraphs = () => {
         datasets: [{
           label: 'Frontend Technologies',
           data: [30, 20, 15, 25, 10, 10, 15],
-          backgroundColor: '#6366F1'
+          backgroundColor: '#fe5f00'
         }]
       },
       options: {
@@ -60,7 +60,7 @@ const TechGraphs = () => {
         datasets: [{
           label: 'Databases',
           data: [35, 20, 25, 20],
-          backgroundColor: '#FBBF24'
+          backgroundColor: '#0c0a3e'
         }]
       },
       options: {
@@ -79,7 +79,7 @@ const TechGraphs = () => {
         datasets: [{
           label: 'Tools',
           data: [30, 15, 25, 15, 15],
-          backgroundColor: '#EF4444'
+          backgroundColor: '#35524a'
         }]
       },
       options: {
@@ -111,19 +111,19 @@ const TechGraphs = () => {
 
   return (
     <div className="grid grid-cols-2 gap-4">
-      <div className="bg-white p-4 rounded-lg shadow-md">
+      <div style={{ backgroundColor: '#ffc2d1' }} className="p-4 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold mb-4">Frontend Technologies</h2>
         <canvas ref={frontendRef}></canvas>
       </div>
-      <div className="bg-white p-4 rounded-lg shadow-md">
+      <div style={{ backgroundColor: '#d6ccc2' }} className="p-4 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold mb-4">Backend Technologies</h2>
         <canvas ref={backendRef}></canvas>
       </div>
-      <div className="bg-white p-4 rounded-lg shadow-md">
+      <div style={{ backgroundColor: '#ccd5ae' }} className="p-4 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold mb-4">Databases</h2>
         <canvas ref={databaseRef}></canvas>
       </div>
-      <div className="bg-white p-4 rounded-lg shadow-md">
+      <div style={{ backgroundColor: '#e9edc9' }} className="p-4 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold mb-4">Tools</h2>
         <canvas ref={toolsRef}></canvas>
       </div>
