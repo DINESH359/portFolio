@@ -1,10 +1,25 @@
 import React from 'react';
+import PieChart from './skill/PieChart';
+import TechGraphs from './skill/TechGraphs';
 
 const Skills = () => {
     return (
-        <div id="skills" className="py-8 w-screen h-96 rounded-full bg-gray-500 opacity-90">
-            <div className="grid grid-cols-3 gap-4">
-                {/* Your skills content goes here */}
+        <div className="grid grid-cols-2 grid-rows-2 h-screen">
+            {/* First quadrant */}
+            <div className="col-span-1 row-span-1 bg-gray-200 p-4">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet dapibus justo.</p>
+            </div>
+            {/* Second quadrant */}
+            <div className="col-span-1 row-span-1 bg-gray-200 p-4">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet dapibus justo.</p>
+            </div>
+            {/* Third quadrant */}
+            <div className="col-span-1 row-span-1 bg-gray-200 p-4">
+                <PieChart />
+            </div>
+            {/* Fourth quadrant */}
+            <div className="col-span-1 row-span-1 bg-gray-200 p-4">
+                <TechGraphs />
             </div>
         </div>
     );
