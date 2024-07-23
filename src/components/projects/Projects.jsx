@@ -8,8 +8,23 @@ import Markdown_vid1 from "../../assets/projects/markdown.mp4";
 import Markdown_img1 from "../../assets/projects/markdown.png";
 import Markdown_vid2 from "../../assets/projects/markdown2.mp4";
 
+import food_code from "../../assets/projects/Food_code.mp4";
+import food_ui from "../../assets/projects/Food_ui.mp4"
+import food_img from "../../assets/projects/Food_img.png"
+
 function Projects() {
   const projects = [
+    {
+      title: "ZOMATO - TOMATO",
+      overview: "ZOMATO - TOMATO is a user-friendly food order app where users can browse menus, add items to their cart, and manage their selections. Secure payments are handled through Stripe, ensuring a smooth checkout experience.",
+      techStack: "React, Node.js, Express, stripe",
+      githubUrl: "https://github.com/example2",
+      media: [
+        { type: 'video', src: food_ui },
+        { type: 'image', src: food_code },
+        { type: 'video', src: food_img },
+      ],
+    },
     {
       title: "HTML to Markdown Converter",
       overview: "This project is an HTML to Markdown converter that transforms HTML content into clean, readable Markdown format. It supports common HTML elements like headings, paragraphs, lists, links, and images, converting them into their Markdown equivalents. The tool aims to simplify content migration and make editing and managing content in Markdown easier.",
@@ -32,17 +47,7 @@ function Projects() {
         { type: 'image', src: portfolio_image_2 },
       ],
     },
-    {
-      title: "Project 2",
-      overview: "A brief overview of the project",
-      techStack: "React, Node.js, Express, MongoDB, Heroku",
-      githubUrl: "https://github.com/example2",
-      media: [
-        { type: 'video', src: Markdown_vid2 },
-        { type: 'image', src: Markdown_img1 },
-        { type: 'video', src: Markdown_vid1 },
-      ],
-    },
+    
   ];
 
   const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
