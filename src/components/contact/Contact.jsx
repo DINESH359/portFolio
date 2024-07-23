@@ -8,7 +8,7 @@ const Contact = () => {
   return (
     <div className="flex justify-center items-center h-screen">
     {/* Contact Form */}
-    <div className="max-w-lg shadow-md rounded px-8 py-6 mt-10 mr-4 ml-10" style={{ backgroundColor: '#b5838d' }}>
+    <div className="max-w-lg w-2/3 shadow-md rounded px-8 py-6 mt-10 mr-4 ml-10" style={{ backgroundColor: '#b5838d' }}>
       <h1 className="text-3xl font-bold text-center mb-6">Let's Talk</h1>
 
         <form>
@@ -66,7 +66,6 @@ const Contact = () => {
           </div>
         </form>
       </div>
-      <ResumeDownload />
     </div>
   );
 };

@@ -1,21 +1,26 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Main.css';
 
-
 const Main = () => {
+    const navigate = useNavigate();
+
+    const handleNavigate = () => {
+        navigate('/projects');
+    };
+
     return (
         <div id="main" className="home-hero__content flex flex-col items-center justify-center h-screen">
             <h1 className="heading-primary">Hey, I'm Dinesh Kumar Jha</h1>
             <div className="home-hero__info">
                 <p className="text-primary">
                     A Result-Oriented Full Stack Developer building and managing Websites and
-                    Web Applications that lead to the success of the overall product
+                    Web Applications that lead to the success of the overall product.
                 </p>
             </div>
             <div className="home-hero__cta mt-8">
-                <a href="#projects" className="button">Projects</a>
+                <button onClick={handleNavigate} className="button">Projects</button>
             </div>
-            
         </div>
     );
 };

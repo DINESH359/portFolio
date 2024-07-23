@@ -1,0 +1,115 @@
+body, html, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.project-media-slider {
+  width: 100%;
+  height: 300px; /* Set the desired fixed height */
+  overflow: hidden;
+  position: relative;
+}
+
+.project-media {
+  width: 100%;
+  height: 100%; /* Ensure it takes up the full height of the slider */
+  object-fit: cover; /* Maintain aspect ratio and cover the area */
+  transition: opacity 1s ease-in-out;
+}
+
+.project-media video {
+  height: 100%; /* Ensure video takes up full height */
+  object-fit: cover; /* Maintain aspect ratio and cover the area */
+}
+
+.projects-container {
+  background-image: url('../../assets//main.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 20px;
+  width: 100%; /* Take the full width of the page */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+.text-3xl {
+  font-size: 1.75rem;
+  width: 100%;
+  text-align: center;
+}
+
+.font-mono {
+  font-family: monospace;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.text-green-200 {
+  color: #bbf7d0;
+}
+
+.project-card {
+  display: flex;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 4px 6px rgba(169, 176, 221, 0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+  width: 90%; /* Set the width to 90% */
+  max-width: 1200px; /* Optional: limit the maximum width */
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+.project-image {
+  width: 25%; /* Adjusted to fit better within the full width */
+  height: auto; /* Keep aspect ratio */
+  object-fit: cover;
+}
+
+.project-details {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 75%; /* Adjusted to fit better within the full width */
+}
+
+.project-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0;
+  width: 100%;
+}
+
+.project-overview {
+  margin: 10px 0;
+  color: #555;
+  width: 100%;
+}
+
+.project-techStack {
+  margin: 10px 0;
+  color: #333;
+  width: 100%;
+}
+
+.project-link {
+  color: white;
+  background-color: #007bff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+  width: 100px; /* Set width to make the button consistent */
+}
+
+.project-link:hover {
+  background-color: #0056b3;
+}

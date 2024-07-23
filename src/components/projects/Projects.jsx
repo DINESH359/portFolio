@@ -1,26 +1,109 @@
-import React from "react";
-import ProjectSection from "./ProjectSection";
+import React, { useState, useEffect } from "react";
+import './Projects.css';
+import portfolio_image_1 from '../../assets/projects/main.png';
+import portfolio_image_2 from '../../assets/projects/skills.png';
+import portfolio_video1 from "../../assets/projects/portfolio.mp4";
+
+import Markdown_vid1 from "../../assets/projects/markdown.mp4";
+import Markdown_img1 from "../../assets/projects/markdown.png";
+import Markdown_vid2 from "../../assets/projects/markdown2.mp4";
+
+
 
 function Projects() {
-  // Sample project object
-  const project = {
-    title: "Sample Project",
-    overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    techStack: "React, Node.js, MongoDB",
-    githubUrl: "https://github.com/example",
-    websiteUrl: "https://example.com",
-  };
+  // Sample project objects with an array of media (images and videos)
+  const projects = [
+    {
+      title: "HTML to Mrkdown Converter",
+      overview: "This project is an HTML to Markdown converter that transforms HTML content into clean, readable Markdown format. It supports common HTML elements like headings, paragraphs, lists, links, and images, converting them into their Markdown equivalents. The tool aims to simplify content migration and make editing and managing content in Markdown easier.",
+      techStack: "React, Node.js, Express, MongoDB ",
+      githubUrl: "https://github.com/DINESH359/NeoKred_Assignment",
+      media: [
+        { type: 'video', src: Markdown_vid2 },
+        { type: 'image', src: Markdown_img1 },
+        { type: 'video', src: Markdown_vid1 },
+      ],
+    },
+    {
+      title: "PortFolio",
+      overview: "A brief overview of the projectBuilt with React, Tailwind CSS, and Chart.js, this interactive data dashboard offers dynamic data visualization through various charts. It features real-time data fetching, user authentication, and a responsive design. The project showcases proficiency in modern web development and data presentation techniques.",
+      techStack: "React, Tailwind css , PieChart.js",
+      githubUrl: "https://github.com/DINESH359/portFolio",
+      media: [
+        { type: 'image', src: portfolio_image_1 },
+        { type: 'video', src: portfolio_video1 },
+        { type: 'image', src: portfolio_image_2 },
+      ],
+    },
+    {
+      title: "Project 2",
+      overview: "A brief overview of the project",
+      techStack: "React, Node.js, Express, MongoDB, Heroku",
+      githubUrl: "https://github.com/example2",
+      media: [
+        { type: 'video', src: Markdown_vid2 },
+        { type: 'image', src: Markdown_img1 },
+        { type: 'video', src: Markdown_vid1 },
+      ],
+    },
+    // Add more projects as needed
+  ];
+
+  const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
+  const [activeProjectIndex, setActiveProjectIndex] = useState(0);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+
+  useEffect(() => {
+    const media = projects[activeProjectIndex].media[currentMediaIndex];
+    let interval;
+
+    if (media.type === 'image') {
+      interval = setInterval(() => {
+        setCurrentMediaIndex(prevIndex => (prevIndex + 1) % projects[activeProjectIndex].media.length);
+      }, 3000); // Change image every 3 seconds
+    } else if (media.type === 'video') {
+      setIsVideoPlaying(true); // Start playing the video
+      interval = setTimeout(() => {
+        setIsVideoPlaying(false); // Stop playing after 15 seconds
+        setCurrentMediaIndex(prevIndex => (prevIndex + 1) % projects[activeProjectIndex].media.length);
+      }, 15000); // Play video for 15 seconds
+    }
+
+    return () => {
+      clearInterval(interval);
+      clearTimeout(interval);
+    };
+  }, [activeProjectIndex, currentMediaIndex, projects]);
 
   return (
-    <div>
-      <h1 className="text-3xl font-mono font-bold text-green-200">Projects</h1>
-
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni blanditiis asperiores natus ipsum error quis, unde nulla esse autem voluptatem itaque odio sequi tempore doloribus mollitia, vel sapiente, corporis harum.
-      </p>
-
-      {/* Rendering ProjectSection component with sample project object */}
-      <ProjectSection project={project} />
+    <div className="projects-container">
+      <h1 className="text-3xl font-mono font-bold text-green-200">Featured Projects</h1>
+      {projects.map((project, projectIndex) => (
+        <div key={projectIndex} className="project-card" onClick={() => setActiveProjectIndex(projectIndex)}>
+          <div className="project-media-slider">
+            {project.media[currentMediaIndex].type === 'image' ? (
+              <img src={project.media[currentMediaIndex].src} alt={project.title} className="project-media" />
+            ) : (
+              <video
+                src={project.media[currentMediaIndex].src}
+                controls
+                className="project-media"
+                autoPlay
+                muted
+                loop={false} // Ensure video doesn't loop automatically
+                playsInline
+                onEnded={() => setIsVideoPlaying(false)}
+              />
+            )}
+          </div>
+          <div className="project-details">
+            <h2 className="project-title">{project.title}</h2>
+            <p className="project-overview">{project.overview}</p>
+            <p className="project-techStack"><strong>Tech stack:</strong> {project.techStack}</p>
+            <a href={project.githubUrl} className="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
