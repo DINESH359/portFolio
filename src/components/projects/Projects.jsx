@@ -8,15 +8,12 @@ import Markdown_vid1 from "../../assets/projects/markdown.mp4";
 import Markdown_img1 from "../../assets/projects/markdown.png";
 import Markdown_vid2 from "../../assets/projects/markdown2.mp4";
 
-
-
 function Projects() {
-  // Sample project objects with an array of media (images and videos)
   const projects = [
     {
-      title: "HTML to Mrkdown Converter",
+      title: "HTML to Markdown Converter",
       overview: "This project is an HTML to Markdown converter that transforms HTML content into clean, readable Markdown format. It supports common HTML elements like headings, paragraphs, lists, links, and images, converting them into their Markdown equivalents. The tool aims to simplify content migration and make editing and managing content in Markdown easier.",
-      techStack: "React, Node.js, Express, MongoDB ",
+      techStack: "React, Node.js, Express, MongoDB",
       githubUrl: "https://github.com/DINESH359/NeoKred_Assignment",
       media: [
         { type: 'video', src: Markdown_vid2 },
@@ -25,9 +22,9 @@ function Projects() {
       ],
     },
     {
-      title: "PortFolio",
-      overview: "A brief overview of the projectBuilt with React, Tailwind CSS, and Chart.js, this interactive data dashboard offers dynamic data visualization through various charts. It features real-time data fetching, user authentication, and a responsive design. The project showcases proficiency in modern web development and data presentation techniques.",
-      techStack: "React, Tailwind css , PieChart.js",
+      title: "Portfolio",
+      overview: "Built with React, Tailwind CSS, and Chart.js, this interactive data dashboard offers dynamic data visualization through various charts. It features real-time data fetching, user authentication, and a responsive design. The project showcases proficiency in modern web development and data presentation techniques.",
+      techStack: "React, Tailwind CSS, Chart.js",
       githubUrl: "https://github.com/DINESH359/portFolio",
       media: [
         { type: 'image', src: portfolio_image_1 },
@@ -46,7 +43,6 @@ function Projects() {
         { type: 'video', src: Markdown_vid1 },
       ],
     },
-    // Add more projects as needed
   ];
 
   const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
@@ -60,13 +56,13 @@ function Projects() {
     if (media.type === 'image') {
       interval = setInterval(() => {
         setCurrentMediaIndex(prevIndex => (prevIndex + 1) % projects[activeProjectIndex].media.length);
-      }, 3000); // Change image every 3 seconds
+      }, 3000);
     } else if (media.type === 'video') {
-      setIsVideoPlaying(true); // Start playing the video
+      setIsVideoPlaying(true);
       interval = setTimeout(() => {
-        setIsVideoPlaying(false); // Stop playing after 15 seconds
+        setIsVideoPlaying(false);
         setCurrentMediaIndex(prevIndex => (prevIndex + 1) % projects[activeProjectIndex].media.length);
-      }, 15000); // Play video for 15 seconds
+      }, 15000);
     }
 
     return () => {
@@ -90,7 +86,7 @@ function Projects() {
                 className="project-media"
                 autoPlay
                 muted
-                loop={false} // Ensure video doesn't loop automatically
+                loop={false}
                 playsInline
                 onEnded={() => setIsVideoPlaying(false)}
               />
