@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import '../projects/Projects.css';
+import './Projects.css';
 import portfolio_image_1 from '../../assets/projects/main.png';
 import portfolio_image_2 from '../../assets/projects/skills.png';
 import portfolio_video1 from "../../assets/projects/portfolio.mp4";
