@@ -1,35 +1,29 @@
 import React from "react";
 import './About.css';
+import Desc from './Desc';
+import Panel from "./Panel";
+import Qualifications from "./Qualfications";
+import EarlyYears from "./EarlyYears";
+import WorkHistory from './WorkHistory';
 
 function About() {
     return (
-        <div className=" about-container w-50%" > 
-         <div className="h-screen">
-            <h1 className="text-4xl text-center underline underline-offset-3px font-mono font-extrabold text-pretty text-black">ABOUT ME</h1>
+        <div className="flex flex-col h-screen">
+            <div className="flex justify-between p-6 pt-16">
+                <Panel className="w-1/2"></Panel>
+                <Desc className="w-1/2"></Desc>
+            </div>
+            <div>
+                <Qualifications></Qualifications>
+            </div>
+            <div>
+                <EarlyYears></EarlyYears>
 
-            <p className="mt-8 text-lg text-center font-serif font-medium text-gray-800">
-                Welcome to my portfolio! I'm Dinesh, a versatile full-stack developer specializing in the MERN stack - MongoDB, Express, React, and Node.js. With proficiency in both frontend and backend development, I excel at crafting seamless user experiences while ensuring robust server-side functionality.
-            </p>
-
-            <p className="mt-4 text-lg text-center font-serif font-medium text-gray-800">
-                In addition to my development work, I'm passionate about sharing insights and knowledge with the developer community. You can find me actively engaging on platforms like LinkedIn and Instagram, where I share valuable content related to web development and programming.
-            </p>
-
-            <p className="mt-4 text-lg text-center font-serif font-medium text-gray-800">
-                I'm always on the lookout for new opportunities that allow me to leverage my skills and expertise to contribute, learn, and grow. If you have a position that aligns with my capabilities, feel free to reach out.
-            </p>
-
-            <p className="mt-4 text-lg text-center font-serif font-medium text-gray-800">
-                Let's connect and explore how we can collaborate to bring your ideas to life!
-            </p>
+            </div>
+            <div>
+            <WorkHistory></WorkHistory>
+            </div>
         </div>
-
-        <div>
-
-        </div>
-
-        </div>
-       
     );
 }
 

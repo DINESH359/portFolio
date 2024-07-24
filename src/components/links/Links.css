@@ -1,5 +1,9 @@
-.main-link{
+.main-link {
     background-color: #f1c0e8;
+    position: fixed; /* Use fixed to keep the component in place */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust to make sure it's centered */
+    left: 0; /* Align it to the left edge */
 }
 
 #link-child{

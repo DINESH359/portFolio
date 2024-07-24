@@ -2,13 +2,13 @@ import React from 'react';
 
 import './Contact.css'
 
-import ResumeDownload from'./ResumeDownload';
 
-const Contact = () => {
+
+const ContactForm = () => {
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex  justify-evenly">
     {/* Contact Form */}
-    <div className="max-w-lg w-2/3  shadow-md rounded px-8 py-6 mt-20 mr-4 ml-10" style={{ backgroundColor: '#b5838d' }}>
+    <div className=" shadow-lg rounded-lg px-8 py-6 " style={{ backgroundColor: '#b5838d' }}>
       <h1 className="text-3xl font-bold text-center mb-6">Let's Talk</h1>
 
         <form>
@@ -70,4 +70,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactForm;
