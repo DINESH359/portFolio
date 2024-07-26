@@ -1,0 +1,40 @@
+/* TicTacToe.css */
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.status {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.board-row {
+  display: flex;
+}
+
+.square {
+  background: #fff;
+  border: 2px solid #999;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 50px;
+  height: 50px;
+  width: 50px;
+  margin-right: -2px;
+  margin-top: -2px;
+  padding: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.square:hover {
+  background-color: #f1f1f1;
+}

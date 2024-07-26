@@ -1,0 +1,45 @@
+/* Add this CSS to your styles file or within a style tag */
+
+.border-gradient {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    bottom: -4px;
+    left: -4px;
+    border-radius: inherit;
+    padding: 4px;
+    background: linear-gradient(90deg, red, yellow, green, blue, purple, red);
+    background-size: 300% 300%;
+    animation: rotateGradient 2s linear infinite, glowEffect 1s ease-in-out infinite alternate;
+    z-index: -1;
+    clip-path: inset(0 0 0 0 round 10px); /* Adjust the round value to match the border-radius */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Inherent shadow */
+  }
+  
+  @keyframes rotateGradient {
+    0% {
+      clip-path: inset(0% 100% 0% 0% round 10px); /* Top side visible */
+    }
+    25% {
+      clip-path: inset(0% 0% 100% 0% round 10px); /* Right side visible */
+    }
+    50% {
+      clip-path: inset(0% 0% 0% 100% round 10px); /* Bottom side visible */
+    }
+    75% {
+      clip-path: inset(100% 0% 0% 0% round 10px); /* Left side visible */
+    }
+    100% {
+      clip-path: inset(0% 100% 0% 0% round 10px); /* Back to top side */
+    }
+  }
+  
+  @keyframes glowEffect {
+    0% {
+      box-shadow: 0 0 30px rgba(195, 119, 119, 0.5); /* Soft red glow */
+    }
+    100% {
+      box-shadow: 0 0 20px rgb(75, 53, 152); /* Strong purple glow */
+    }
+  }
+  
